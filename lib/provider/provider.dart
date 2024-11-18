@@ -11,15 +11,18 @@ class KehadiranProvider with ChangeNotifier {
     {'name': 'Sri Nur Hayati', 'present': false},
   ];
 
-  // menyimpan data kehadiran siswa
+  // menyimpan data kehadiran siswa pada sebuah Map
   final List<Map<String, dynamic>> riwayatKehadiran = [];
 
-  void saveAttendance() {
+  // Menyimpan jumlah siswa yang telah melakukan presensi serta mereset status presensi
+  void saveKehadiran() {
+
     // Menyimpan jumlah siswa yang telah melakukan presensi
     final int presentCount = students.where((s) => s['present']).length;
     final int absentCount = students.length - presentCount;
 
-    // Simpan data ke dalam riwayat
+    // Simpan data ke dalam riwayat (fungsi dari insert 0 digunakan agar data yang dimasukkan selalu berada di atas)
+    // riwayatkehadiran menyimpan jumlah dari siswa yang melakukan absen dan tidak
     riwayatKehadiran.insert(0, {
       'date': DateTime.now(),
       'presentCount': presentCount,
@@ -31,7 +34,7 @@ class KehadiranProvider with ChangeNotifier {
     //   student['present'] = false;
     // }
 
-    // notifikasi untuk mengetahui apakah sudah terhubung dengan provider
+    // notifikasi untuk mengetahui apakah sudah terhubung dengan provider serta memperbarui tampilan ketika terjadi perubahan
     notifyListeners();
   }
 }
