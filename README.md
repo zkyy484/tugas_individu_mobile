@@ -11,7 +11,7 @@
    a. List data siswa
 
    ![Screenshot_20241118-100106 1](https://github.com/user-attachments/assets/fed9033e-ac5e-453b-8fe6-7f03749086f3)
-     
+   
       - Keterangan: Pada halaman ini terdapat beberapa list data yang sudah dibuat pada provider, serta chexbox yang digunakan sebagai nilai penentu (true atau false) pada data kehadiran.
         
    b. Menyimpan kehadiran siswa
