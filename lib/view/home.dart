@@ -31,7 +31,14 @@ class HalamanKehadiran extends StatelessWidget {
                 final student = provider.students[index];
 
 
-                return ListTile(
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)
+                    ),
+                    elevation: 5,
+                    child: ListTile(
                       contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                       title: Text(
                         student['name'],
@@ -49,7 +56,9 @@ class HalamanKehadiran extends StatelessWidget {
                           provider.notifyListeners();
                         },
                       ),
-                    );
+                    ),
+                  ),
+                ); 
 
 
 
@@ -73,7 +82,7 @@ class HalamanKehadiran extends StatelessWidget {
                 backgroundColor: Colors.deepPurple,
                 foregroundColor: Colors.white,
               ),
-              child: Text(
+              child: const Text(
                 'Simpan Kehadiran',
                 style: TextStyle(
                   fontSize: 14,
