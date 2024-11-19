@@ -7,6 +7,7 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
+        // digunakan untuk integrasi dengan changenotif yang terdapat pada kehadiran provider
         ChangeNotifierProvider(create: (_) => KehadiranProvider()),
       ],
       child: MaterialApp(

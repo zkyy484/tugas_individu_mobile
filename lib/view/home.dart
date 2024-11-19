@@ -29,14 +29,9 @@ class HalamanKehadiran extends StatelessWidget {
               itemCount: provider.students.length,
               itemBuilder: (context, index) {
                 final student = provider.students[index];
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    elevation: 5,
-                    child: ListTile(
+
+
+                return ListTile(
                       contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                       title: Text(
                         student['name'],
@@ -47,15 +42,18 @@ class HalamanKehadiran extends StatelessWidget {
                       ),
                       trailing: Checkbox(
                         value: student['present'],
+                        
                         // Dipanggil ketika terjadi perubahan nilai present pada siswa dan memperbarui UInya
                         onChanged: (value) {
                           student['present'] = value!;
                           provider.notifyListeners();
                         },
                       ),
-                    ),
-                  ),
-                );
+                    );
+
+
+
+
               },
             ),
           ),
@@ -89,3 +87,4 @@ class HalamanKehadiran extends StatelessWidget {
     );
   }
 }
+

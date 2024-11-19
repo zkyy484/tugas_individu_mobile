@@ -36,11 +36,11 @@ class _ModelTampilanState extends State<ModelTampilan> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: Colors.white,
-        selectedLabelStyle: TextStyle(
+        selectedLabelStyle: const TextStyle(
           color: Colors.white
         ),
         unselectedItemColor: Colors.grey,
-        unselectedLabelStyle: TextStyle(
+        unselectedLabelStyle: const TextStyle(
           color: Colors.blueGrey,
         ),
         items: [
